@@ -18,13 +18,18 @@ import static org.junit.jupiter.api.Assertions.*;
 class OdontologoServiceTest {
     @Autowired
     private OdontologoService odontologoService;
+    private static Odontologo odontologo;
+
+
 
     @Test
     @Order(1)
     void deberiaRegistrarOdontologo() throws BadRequestException {
-        Odontologo odontologoAInsertar = new Odontologo("AB-466464646464646", "Alejandro", "Perez");
-        OdontologoDto odontologoDto = odontologoService.registrarOdontologo(odontologoAInsertar);
-
+        Odontologo odontologoARegistrar = new Odontologo(
+                "AB-466464646464646",
+                "Alejandro",
+                "Perez");
+        OdontologoDto odontologoDto = odontologoService.registrarOdontologo(odontologoARegistrar);
         Assertions.assertNotNull(odontologoDto);
         Assertions.assertNotNull(odontologoDto.getId());
 
@@ -32,7 +37,7 @@ class OdontologoServiceTest {
 
     @Test
     @Order(2)
-    void deberiaListarOdontologos() {
+    void deberiaListarUnOdontologo() {
         List<OdontologoDto> odontologosDtos = odontologoService.listarOdontologos();
         assertEquals(1, odontologosDtos.size());
     }
