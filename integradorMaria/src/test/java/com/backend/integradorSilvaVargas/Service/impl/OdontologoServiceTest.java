@@ -26,7 +26,7 @@ class OdontologoServiceTest {
     @Order(1)
     void deberiaRegistrarOdontologo() throws BadRequestException {
         Odontologo odontologoARegistrar = new Odontologo(
-                "AB-466464646464646",
+                "466464646464646",
                 "Alejandro",
                 "Perez");
         OdontologoDto odontologoDto = odontologoService.registrarOdontologo(odontologoARegistrar);
