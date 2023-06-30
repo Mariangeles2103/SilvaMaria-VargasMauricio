@@ -27,6 +27,8 @@ public class TurnoService implements ITurnoService {
     private final PacienteRepository pacienteRepository;
     private final OdontologoRepository odontologoRepository;
     private final ObjectMapper objectMapper;
+    private final PacienteService pacienteService = null;
+    private final OdontologoService odontologoService = null;
 
     @Autowired
     public TurnoService(
@@ -73,16 +75,12 @@ public class TurnoService implements ITurnoService {
     @Override
     public List<TurnoDto> listarTodos() {
         List<Turno> turnos = turnoRepository.findAll();
-        List<TurnoDto> turnoDtos = turnos.stream()
-                .map(turno -> {
-                    TurnoDto turnoDto = objectMapper.convertValue(turno, TurnoDto.class);
-                    turnoDto.setPaciente(PacienteDto.fromPaciente(turno.getPaciente()));
-                    turnoDto.setOdontologo(OdontologoDto.fromOdontologo(turno.getOdontologo()));
-                    return turnoDto;
-                })
+        List<TurnoDto> turnoDtoList = turnos.stream()
+                .map(TurnoDto::fromTurno)
                 .toList();
-        LOGGER.info("Lista de todos los turnos: {}", turnoDtos);
-        return turnoDtos;
+
+        LOGGER.info("Lista de todos los turnos: {}");
+        return turnoDtoList;
     }
 
     @Override

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba Integradora Backend C9</title>
+    <link rel="icon" type="image/x-icon" href="./assets/logo1.jpg">
+    <meta name="description" content="Proyecto integrador | Camada9 Digital House | Backend"/>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="scripts/script.js"></script>
+
+
+
+</head>
+
+<body>
+
+<header>
+    <h1>Clinica Odontologica</h1>
+    <nav>
+        <ul>
+            <li>Pacientes</li>
+            <li>Odontólogos</li>
+            <li>Turnos</li>
+        </ul>
+    </nav>
+
+    <div class="info">
+        <p class="clima">🌤 14.3° Capital Federal, Argentina </p>
+
+    </div>
+</header>
+
+<main class="cajaPrincipal">
+
+    <article>
+        <h2>Pacientes</h2>
+        <img src="assets/pacientes1.jpg">
+        <button id="listadoPacientes">Listado de pacientes </button>
+        <button id="agregarPaciente">
+            <a href="nuevoPaciente.html"> Agregar un nuevo paciente </a>
+        </button>
+        <li class="espacio"></li>
+        <p>Buscar Paciente por ID</p>
+        <input type="number" id="buscarPacienteID" autofocus>
+        <button type="submit">Buscar Paciente</button>
+
+    </article>
+
+    <article>
+        <h2> Odontólogos</h2>
+        <img src="assets/odontologos.jpg" alt="">
+        <button id="listadoPacientes">Listado de Odontólogo </button>
+        <button id="agregarOdontologo">
+            <a href="nuevoOdontologo.html"> Agregar un nuevo Odontólogo </a>
+        </button>
+        <li class="espacio"></li>
+        <p>Buscar Odontólogo por ID</p>
+        <input type="number" id="buscarOdontologoID" autofocus>
+        <button type="submit">Buscar Odontólogo</button>
+
+    </article>
+
+    <article>
+        <h2>Turnos</h2>
+        <img src="assets/turnos.jpg" alt="">
+        <button id="listadoTurnos">Listado de turnos </button>
+        <button id="listadoTurnosSemanales">Listado de turnos semanales</button>
+        <button id="nuevoTurno">
+            <a href="nuevoTurno.html"> Solciitar un nuevo turno </a>
+        </button>
+        <li class="espacio"></li>
+        <p>Buscar turno por ID</p>
+        <input type="number" id="buscarTurnoID" autofocus>
+        <button type="submit">Buscar Turno</button>
+
+    </article>
+
+
+</main>
+<footer>
+    Proyecto de integrador Backend C9.
+    Mauricio Vargas y Maria de Los Angeles Silva
+</footer>
+
+</body>
+
+</html>
